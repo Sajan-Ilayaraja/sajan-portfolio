@@ -18,11 +18,43 @@
         // Apply theme immediately to prevent flashing
         (function () {
             const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark-mode');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
             }
         })();
     </script>
+
+    <!-- Impressive Preloader -->
+    <div id="preloader">
+        <div class="shutter shutter-left"></div>
+        <div class="shutter shutter-right"></div>
+        
+        <div class="preloader-content">
+            <!-- 3D Cyber Scanner -->
+            <div class="cyber-scanner">
+                <div class="scanner-ring ring-1"></div>
+                <div class="scanner-ring ring-2"></div>
+                <div class="scanner-core">S</div>
+            </div>
+            
+            <!-- Progress Info -->
+            <div class="loader-progress-wrap">
+                <div class="loader-percentage">[ 00% ]</div>
+                <div class="loader-bar-segmented">
+                    <span class="segment"></span>
+                    <span class="segment"></span>
+                    <span class="segment"></span>
+                    <span class="segment"></span>
+                    <span class="segment"></span>
+                    <span class="segment"></span>
+                    <span class="segment"></span>
+                    <span class="segment"></span>
+                    <span class="segment"></span>
+                    <span class="segment"></span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Custom Background (Canvas + Nebula Blurs) -->
     <div class="background-wrapper">
@@ -356,7 +388,8 @@
                             <li>Developed features for <strong>Neyam</strong>, supporting transport, postal voting, and
                                 Braille assistance for differently-abled voters.</li>
                             <li>Contributed to <strong>VoteAble</strong>, an administrative platform managing
-                                <strong>1,200+ voter assistance requests</strong> across multiple constituencies.</li>
+                                <strong>1,200+ voter assistance requests</strong> across multiple constituencies.
+                            </li>
                             <li>Collaborated with the team on <strong>UI development, API integration, database
                                     handling, testing, and deployment</strong>.</li>
                         </ul>
@@ -452,12 +485,13 @@
                             </div>
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="Build Club Live Site">
+                                    <a href="https://build-club-psnacet.web.app" target="_blank" class="project-link"
+                                        aria-label="Build Club Live Site">
                                         <i data-lucide="external-link"></i>
                                     </a>
-                                    <a href="https://github.com/Sajan-Ilayaraja" target="_blank" class="project-link"
-                                        aria-label="Build Club Codebase">
-                                        <i data-lucide="github"></i>
+                                    <a href="https://github.com/Sajan-Ilayaraja/Build-Club" target="_blank"
+                                        class="project-link" aria-label="Build Club Codebase" title="View Source Code">
+                                        <i data-lucide="code"></i>
                                     </a>
                                 </div>
                             </div>
@@ -471,65 +505,6 @@
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">TypeScript</span>
                             <span class="tech-tag">Firebase</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="project-card tilt-card">
-                    <div class="browser-frame">
-                        <div class="browser-header">
-                            <span class="browser-dot"></span>
-                            <span class="browser-dot"></span>
-                            <span class="browser-dot"></span>
-                        </div>
-                        <div class="browser-body">
-                            <div class="mockup-visual visual-mcp">
-                                <svg class="mcp-svg" viewBox="0 0 150 90">
-                                    <!-- Links -->
-                                    <path d="M 25 45 L 75 25" class="mcp-link-line" />
-                                    <path d="M 25 45 L 75 65" class="mcp-link-line" />
-                                    <path d="M 75 25 L 125 45" class="mcp-link-line" />
-                                    <path d="M 75 65 L 125 45" class="mcp-link-line" />
-
-                                    <!-- Packets -->
-                                    <circle r="3" class="data-packet">
-                                        <animateMotion dur="4s" repeatCount="indefinite"
-                                            path="M 25 45 L 75 25 L 125 45" />
-                                    </circle>
-                                    <circle r="3" class="data-packet" fill="#10b981">
-                                        <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite"
-                                            path="M 25 45 L 75 65 L 125 45" />
-                                    </circle>
-
-                                    <!-- Nodes -->
-                                    <circle cx="25" cy="45" r="8" class="mcp-node-circle" />
-                                    <circle cx="75" cy="25" r="8" class="mcp-node-circle" />
-                                    <circle cx="75" cy="65" r="8" class="mcp-node-circle" />
-                                    <circle cx="125" cy="45" r="8" class="mcp-node-circle" />
-                                </svg>
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="MCP Live Site">
-                                        <i data-lucide="external-link"></i>
-                                    </a>
-                                    <a href="https://github.com/Sajan-Ilayaraja" target="_blank" class="project-link"
-                                        aria-label="MCP Codebase">
-                                        <i data-lucide="github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>MCP Integration Project</h3>
-                        <p>Built a multi-service automation system integrating MCP servers with Pipedream workflows for
-                            various API integrations.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Cursor AI</span>
-                            <span class="tech-tag">MCP</span>
-                            <span class="tech-tag">Pipedream</span>
-                            <span class="tech-tag">APIs</span>
                         </div>
                     </div>
                 </div>
@@ -556,12 +531,14 @@
                             </div>
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="Ticket Booking Live Site">
+                                    <a href="https://frabjous-mermaid-ecc2c1.netlify.app/#" target="_blank"
+                                        class="project-link" aria-label="Ticket Booking Live Site">
                                         <i data-lucide="external-link"></i>
                                     </a>
-                                    <a href="https://github.com/Sajan-Ilayaraja" target="_blank" class="project-link"
-                                        aria-label="Ticket Booking Codebase">
-                                        <i data-lucide="github"></i>
+                                    <a href="https://github.com/Sajan-Ilayaraja/learn-with-guvi-BookingApp.git"
+                                        target="_blank" class="project-link" aria-label="Ticket Booking Codebase"
+                                        title="View Source Code">
+                                        <i data-lucide="code"></i>
                                     </a>
                                 </div>
                             </div>
@@ -613,12 +590,21 @@
                             </div>
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="VoteAble Live Site">
-                                        <i data-lucide="external-link"></i>
+                                    <a href="https://play.google.com/store/apps/details?id=com.voteable" target="_blank"
+                                        class="project-link" aria-label="VoteAble Play Store"
+                                        title="VoteAble on Play Store">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;">
+                                            <path
+                                                d="M6 18c0 .55.45 1 1 1h1v3.5c0 .28.22.5.5.5h1c.28 0 .5-.22.5-.5V19h2v3.5c0 .28.22.5.5.5h1c.28 0 .5-.22.5-.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zM12 2c-1.1 0-2 .9-2 2h4c0-1.1-.9-2-2-2z" />
+                                        </svg>
                                     </a>
-                                    <a href="https://github.com/Sajan-Ilayaraja" target="_blank" class="project-link"
-                                        aria-label="VoteAble Codebase">
-                                        <i data-lucide="github"></i>
+                                    <a href="https://play.google.com/store/apps/details?id=com.neyam.app"
+                                        target="_blank" class="project-link" aria-label="Neyam Play Store"
+                                        title="Neyam on Play Store">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;">
+                                            <path
+                                                d="M6 18c0 .55.45 1 1 1h1v3.5c0 .28.22.5.5.5h1c.28 0 .5-.22.5-.5V19h2v3.5c0 .28.22.5.5.5h1c.28 0 .5-.22.5-.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zM12 2c-1.1 0-2 .9-2 2h4c0-1.1-.9-2-2-2z" />
+                                        </svg>
                                     </a>
                                 </div>
                             </div>
@@ -686,12 +672,13 @@
                             </div>
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="MyCampusOS Live Site">
+                                    <a href="https://my-campus-os.vercel.app" target="_blank" class="project-link"
+                                        aria-label="MyCampusOS Live Site">
                                         <i data-lucide="external-link"></i>
                                     </a>
-                                    <a href="https://github.com/Sajan-Ilayaraja" target="_blank" class="project-link"
-                                        aria-label="MyCampusOS Codebase">
-                                        <i data-lucide="github"></i>
+                                    <a href="https://github.com/Sajan-Ilayaraja/MyCampusOS.git" target="_blank"
+                                        class="project-link" aria-label="MyCampusOS Codebase" title="View Source Code">
+                                        <i data-lucide="code"></i>
                                     </a>
                                 </div>
                             </div>
@@ -814,46 +801,7 @@
                     </div>
                 </div>
 
-                <div class="certification-card tilt-card">
-                    <div class="certification-header">
-                        <div class="certification-badge">
-                            <i data-lucide="lightbulb"></i>
-                        </div>
-                        <div class="certification-info">
-                            <h3>IDE Bootcamp</h3>
-                            <h4>AICTE – Wadhwani Foundation</h4>
-                            <div class="certification-meta">
-                                <span class="certification-date"><i data-lucide="calendar"></i> Completed 2023</span>
-                                <span class="certification-id"><i data-lucide="ticket"></i> 5-Day Intensive</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="certification-content">
-                        <p>5-day intensive training on innovation, entrepreneurship, intellectual property, funding, and
-                            product development. Gained practical insights into startup building and pitching.</p>
-                        <div class="certification-skills">
-                            <span class="skill-tag">Entrepreneurship</span>
-                            <span class="skill-tag">Innovation</span>
-                            <span class="skill-tag">Product Development</span>
-                            <span class="skill-tag">Startup Pitching</span>
-                        </div>
-                    </div>
-                    <div class="certification-footer">
-                        <a href="#" class="btn btn-outline">
-                            <i data-lucide="external-link"></i>
-                            View Certificate
-                        </a>
-                        <a href="https://linkedin.com/in/ramjeevasajani" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-outline btn-linkedin-post">
-                            <svg viewBox="0 0 24 24" class="linkedin-btn-icon" fill="currentColor"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
-                            LinkedIn Post
-                        </a>
-                    </div>
-                </div>
+
 
             </div>
         </div>

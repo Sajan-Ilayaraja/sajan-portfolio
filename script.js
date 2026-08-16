@@ -74,7 +74,7 @@ function initInteractiveBackground() {
     }
 
     function animate(time) {
-        const isDarkMode = document.body.classList.contains('dark-mode');
+        const isDarkMode = !document.body.classList.contains('light-mode');
         ctx.fillStyle = isDarkMode ? '#090d16' : '#f8fafc'; // background clear
         ctx.fillRect(0, 0, width, height);
 
@@ -131,9 +131,9 @@ function initApp() {
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
         });
     }
 
@@ -716,3 +716,51 @@ function showNotification(message, type) {
         setTimeout(() => notification.remove(), 400);
     }, 4000);
 }
+
+// Preloader Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        const segments = preloader.querySelectorAll('.loader-bar-segmented .segment');
+        const percentage = preloader.querySelector('.loader-percentage');
+        
+        let progress = 0;
+
+        // Update progress bar segment active states and count
+        const updateProgressBar = () => {
+            progress += Math.floor(Math.random() * 4) + 2; // increments of 2 to 5
+            if (progress > 100) progress = 100;
+
+            percentage.textContent = `[ ${progress.toString().padStart(2, '0')}% ]`;
+
+            // Active segment calculation (10 segments)
+            const activeSegmentsCount = Math.floor(progress / 10);
+            segments.forEach((seg, idx) => {
+                if (idx < activeSegmentsCount) {
+                    seg.classList.add('active');
+                } else {
+                    seg.classList.remove('active');
+                }
+            });
+
+            if (progress < 100) {
+                const delay = Math.random() * 15 + 10; // fast delay
+                setTimeout(updateProgressBar, delay);
+            } else {
+                // Done loading - auto-open shutters immediately after a tiny visual pause
+                setTimeout(() => {
+                    document.body.classList.add('shutters-open');
+                    
+                    // Wait for shutter transitions to finish, then clean up preloader element completely
+                    setTimeout(() => {
+                        document.body.classList.add('loaded');
+                        preloader.remove(); // remove it from DOM to release resources
+                    }, 800);
+                }, 300);
+            }
+        };
+
+        // Start progress bar animation after a brief delay
+        setTimeout(updateProgressBar, 100);
+    }
+});
