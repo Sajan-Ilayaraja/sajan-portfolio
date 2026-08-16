@@ -218,7 +218,7 @@ function initApp() {
 
     // Contact Form handling with custom backend
     const contactForm = document.getElementById('contactForm');
-    const API_BASE_URL = 'https://sajan-portfolio-tan.vercel.app/';
+    const API_BASE_URL = 'https://sajan-portfolio.onrender.com';
 
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
