@@ -176,7 +176,7 @@ function initApp() {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             const navbarHeight = navbar ? navbar.offsetHeight : 80;
-            
+
             if (window.scrollY >= (sectionTop - navbarHeight - 120)) {
                 current = section.getAttribute('id');
             }
@@ -200,7 +200,7 @@ function initApp() {
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
@@ -218,17 +218,17 @@ function initApp() {
 
     // Contact Form handling with custom backend
     const contactForm = document.getElementById('contactForm');
-    const API_BASE_URL = 'http://localhost:5000';
+    const API_BASE_URL = 'https://sajan-portfolio-tan.vercel.app/';
 
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const subject = document.getElementById('subject').value.trim();
             const message = document.getElementById('message').value.trim();
-            
+
             // Client-side validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!name || !email || !subject || !message || !emailRegex.test(email)) {
@@ -245,10 +245,10 @@ function initApp() {
             const submitBtn = this.querySelector('button[type="submit"]');
             const btnText = submitBtn.querySelector('.btn-text');
             const originalText = btnText ? btnText.textContent : 'Send Message';
-            
+
             if (btnText) btnText.textContent = 'Sending...';
             submitBtn.disabled = true;
-            
+
             fetch(`${API_BASE_URL}/api/contact`, {
                 method: 'POST',
                 headers: {
@@ -256,28 +256,28 @@ function initApp() {
                 },
                 body: JSON.stringify({ name, email, subject, message })
             })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.success) {
-                    showNotification("Message sent successfully! I'll get back to you soon.", "success");
-                    contactForm.reset();
-                } else {
-                    showNotification(data.message || "Failed to send message. Please try again.", "error");
-                }
-            })
-            .catch(error => {
-                console.error('Contact Form Error:', error);
-                showNotification("Failed to send message. Please try again.", "error");
-            })
-            .finally(() => {
-                if (btnText) btnText.textContent = originalText;
-                submitBtn.disabled = false;
-            });
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        showNotification("Message sent successfully! I'll get back to you soon.", "success");
+                        contactForm.reset();
+                    } else {
+                        showNotification(data.message || "Failed to send message. Please try again.", "error");
+                    }
+                })
+                .catch(error => {
+                    console.error('Contact Form Error:', error);
+                    showNotification("Failed to send message. Please try again.", "error");
+                })
+                .finally(() => {
+                    if (btnText) btnText.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 
@@ -335,14 +335,14 @@ function initApp() {
     tiltCards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
-            
+
             // 3D Tilt calculations
             const tx = e.clientX - rect.left - rect.width / 2;
             const ty = e.clientY - rect.top - rect.height / 2;
             const tiltX = -(ty / rect.height) * 14;
             const tiltY = (tx / rect.width) * 14;
             card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-5px)`;
-            
+
             // Spotlight glow position coordinates
             const mx = e.clientX - rect.left;
             const my = e.clientY - rect.top;
@@ -367,10 +367,10 @@ function initApp() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                
+
                 // Stagger animations for list child elements
-                if (entry.target.classList.contains('projects-grid') || 
-                    entry.target.classList.contains('timeline') || 
+                if (entry.target.classList.contains('projects-grid') ||
+                    entry.target.classList.contains('timeline') ||
                     entry.target.classList.contains('experience-container') ||
                     entry.target.classList.contains('certifications-container') ||
                     entry.target.classList.contains('achievements-grid') ||
@@ -390,7 +390,7 @@ function initApp() {
                         title.classList.add('shimmer-active');
                     }
                 }
-                
+
                 if (entry.target.classList.contains('about')) {
                     animateCounters();
                 }
@@ -428,7 +428,7 @@ function scrambleText(element) {
     if (!element.getAttribute('data-original-text')) {
         element.setAttribute('data-original-text', originalText);
     }
-    
+
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%-+';
     let iterations = 0;
     const interval = setInterval(() => {
@@ -440,12 +440,12 @@ function scrambleText(element) {
                 return chars[Math.floor(Math.random() * chars.length)];
             })
             .join('');
-        
+
         if (iterations >= originalText.length) {
             clearInterval(interval);
             element.textContent = originalText;
         }
-        iterations += 1/3;
+        iterations += 1 / 3;
     }, 30);
 }
 
@@ -481,7 +481,7 @@ function initHeroRoles() {
             // Update text index
             roleIndex = (roleIndex + 1) % roles.length;
             roleText.textContent = roles[roleIndex];
-            
+
             // Position at bottom transparently
             roleText.classList.remove('slide-up-out');
             roleText.classList.add('slide-up-prep');
@@ -509,7 +509,7 @@ function initSlideshow() {
     const showSlide = (index) => {
         slides.forEach(slide => slide.classList.remove('active'));
         indicators.forEach(indicator => indicator.classList.remove('active'));
-        
+
         slides[index].classList.add('active');
         if (indicators[index]) indicators[index].classList.add('active');
         currentSlide = index;
@@ -594,7 +594,7 @@ function initTerminalSimulator() {
             activeLineEl = document.createElement('div');
             activeLineEl.className = 'terminal-line active-line';
             terminalBody.appendChild(activeLineEl);
-            
+
             // Auto scroll container
             terminalBody.scrollTop = terminalBody.scrollHeight;
         }
@@ -674,7 +674,7 @@ function showNotification(message, type) {
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.textContent = message;
-    
+
     notification.style.cssText = `
         position: fixed;
         bottom: 30px;
@@ -694,7 +694,7 @@ function showNotification(message, type) {
         gap: 10px;
         backdrop-filter: blur(10px);
     `;
-    
+
     if (type === 'success') {
         notification.style.background = 'linear-gradient(135deg, rgba(16, 185, 129, 0.9), rgba(5, 150, 105, 0.9))';
         notification.style.border = '1px solid rgba(16, 185, 129, 0.3)';
@@ -702,14 +702,14 @@ function showNotification(message, type) {
         notification.style.background = 'linear-gradient(135deg, rgba(239, 68, 68, 0.9), rgba(220, 38, 38, 0.9))';
         notification.style.border = '1px solid rgba(239, 68, 68, 0.3)';
     }
-    
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         notification.style.transform = 'translateY(0)';
         notification.style.opacity = '1';
     }, 100);
-    
+
     setTimeout(() => {
         notification.style.transform = 'translateY(100px)';
         notification.style.opacity = '0';
