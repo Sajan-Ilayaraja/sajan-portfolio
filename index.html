@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ram Jeeva Sajan | Full Stack Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <script>
+        // Apply theme immediately to prevent flashing
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+        })();
+    </script>
+
+    <!-- Custom Background (Canvas + Nebula Blurs) -->
+    <div class="background-wrapper">
+        <div class="blur-spot spot-1"></div>
+        <div class="blur-spot spot-2"></div>
+        <div class="blur-spot spot-3"></div>
+        <canvas id="background-canvas"></canvas>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home" class="logo-link">
+                    <span class="logo-text">Sajan</span>
+                    <span class="logo-dot">.</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link" data-text="Home">Home</a>
+                <a href="#about" class="nav-link" data-text="About">About</a>
+                <a href="#education" class="nav-link" data-text="Education">Education</a>
+                <a href="#experience" class="nav-link" data-text="Experience">Experience</a>
+                <a href="#projects" class="nav-link" data-text="Projects">Projects</a>
+                <a href="#certifications" class="nav-link" data-text="Certifications">Certifications</a>
+                <a href="#achievements" class="nav-link" data-text="Achievements">Achievements</a>
+                <a href="#extracurricular" class="nav-link" data-text="Extracurricular">Extracurricular</a>
+                <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
+            </div>
+            <button id="theme-toggle" class="theme-toggle magnetic" aria-label="Toggle dark/light mode">
+                <i data-lucide="sun" class="sun-icon"></i>
+                <i data-lucide="moon" class="moon-icon"></i>
+            </button>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="text-reveal">
+                        <h4 class="hero-subtitle">Hello, I'm</h4>
+                    </div>
+                    <div class="text-reveal">
+                        <h1 class="hero-title">Ram Jeeva Sajan</h1>
+                    </div>
+                    <div class="text-reveal">
+                        <h2 class="hero-role">
+                            <span class="role-text">Full Stack Developer</span>
+                        </h2>
+                    </div>
+                    <div class="text-reveal">
+                        <p class="hero-description">I build innovative web applications and solve complex problems using
+                            modern technologies. Passionate about creating efficient, scalable solutions with clean
+                            code.</p>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary magnetic">
+                            <span class="btn-text">View My Work</span>
+                            <div class="btn-shine"></div>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary magnetic">
+                            <span class="btn-text">Get In Touch</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="terminal-mockup">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot dot-red"></span>
+                                <span class="terminal-dot dot-yellow"></span>
+                                <span class="terminal-dot dot-green"></span>
+                            </div>
+                            <div class="terminal-title">developer.js</div>
+                        </div>
+                        <div class="terminal-body" id="terminal-code"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse-outline">
+                    <div class="mouse-wheel"></div>
+                </div>
+                <div class="bounce-arrow">
+                    <i data-lucide="chevron-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated Background Elements -->
+        <div class="background-elements">
+            <div class="bg-element el-1"></div>
+            <div class="bg-element el-2"></div>
+            <div class="bg-element el-3"></div>
+            <div class="bg-element el-4"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-subtitle">Get to know me better</div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="text-block">
+                        <p>I'm a passionate Full Stack Developer with a Bachelor's degree in Information Technology from
+                            PSNA College of Engineering and Technology. I specialize in building modern, responsive web
+                            applications using technologies like React, TypeScript, Python, and Firebase.</p>
+                    </div>
+                    <div class="text-block">
+                        <p>Currently, I'm expanding my skills in Data Structures & Algorithms and exploring the exciting
+                            field of Generative AI and Prompt Engineering.</p>
+                    </div>
+                    <div class="text-block">
+                        <p>As a Core Member of Build Club at IIT Madras Research Park, I organize technical events and
+                            contribute to projects spanning both hardware and software domains.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number" data-count="5">0</div>
+                            <div class="stat-text">Projects Completed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="3">0</div>
+                            <div class="stat-text">Internships</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="3">0</div>
+                            <div class="stat-text">Certifications</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="image-container">
+                            <img src="profile.jpg" alt="Ram Jeeva Sajan" class="profile-photo">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Ram Jeeva Sajan I</h3>
+                                    <p>Full Stack Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack & Skills Showcase -->
+            <div class="tech-stack-container">
+                <div class="section-header">
+                    <h2 class="section-title">My Tech Arsenal</h2>
+                    <div class="section-subtitle">Technologies and tools I work with daily</div>
+                </div>
+                <div class="tech-grid">
+                    <!-- Programming Languages Card -->
+                    <div class="tech-card tilt-card">
+                        <div class="tech-icon-wrapper">
+                            <i data-lucide="code"></i>
+                        </div>
+                        <h3>Programming Languages</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag-badge">Python</span>
+                            <span class="tech-tag-badge">Java</span>
+                            <span class="tech-tag-badge">JavaScript</span>
+                        </div>
+                    </div>
+                    <!-- Frontend Card -->
+                    <div class="tech-card tilt-card">
+                        <div class="tech-icon-wrapper">
+                            <i data-lucide="monitor"></i>
+                        </div>
+                        <h3>Frontend Development</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag-badge">React.js</span>
+                            <span class="tech-tag-badge">HTML5</span>
+                            <span class="tech-tag-badge">CSS3</span>
+                            <span class="tech-tag-badge">Bootstrap</span>
+                            <span class="tech-tag-badge">Flutter</span>
+                        </div>
+                    </div>
+                    <!-- Backend Card -->
+                    <div class="tech-card tilt-card">
+                        <div class="tech-icon-wrapper">
+                            <i data-lucide="server"></i>
+                        </div>
+                        <h3>Backend Development</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag-badge">Node.js</span>
+                            <span class="tech-tag-badge">Express.js</span>
+                            <span class="tech-tag-badge">Flask</span>
+                            <span class="tech-tag-badge">REST APIs</span>
+                        </div>
+                    </div>
+                    <!-- Databases Card -->
+                    <div class="tech-card tilt-card">
+                        <div class="tech-icon-wrapper">
+                            <i data-lucide="database"></i>
+                        </div>
+                        <h3>Databases</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag-badge">MongoDB</span>
+                            <span class="tech-tag-badge">MySQL</span>
+                            <span class="tech-tag-badge">PostgreSQL</span>
+                            <span class="tech-tag-badge">Firebase Firestore</span>
+                        </div>
+                    </div>
+                    <!-- Tools & Platforms Card -->
+                    <div class="tech-card tilt-card">
+                        <div class="tech-icon-wrapper">
+                            <i data-lucide="terminal"></i>
+                        </div>
+                        <h3>Tools & Platforms</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag-badge">Git</span>
+                            <span class="tech-tag-badge">GitHub</span>
+                            <span class="tech-tag-badge">VS Code</span>
+                            <span class="tech-tag-badge">n8n</span>
+                            <span class="tech-tag-badge">Automation Anywhere</span>
+                        </div>
+                    </div>
+                    <!-- Data & Design Card -->
+                    <div class="tech-card tilt-card">
+                        <div class="tech-icon-wrapper">
+                            <i data-lucide="bar-chart-2"></i>
+                        </div>
+                        <h3>Data & Design</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag-badge">Power BI</span>
+                            <span class="tech-tag-badge">Canva</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <div class="section-subtitle">My academic journey</div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <div class="timeline-info">
+                            <div class="timeline-date">2023 - Present</div>
+                            <h3>Bachelor of Science in Information Technology</h3>
+                            <h4>PSNA College of Engineering and Technology</h4>
+                            <p>Currently pursuing my degree with a focus on software development, data structures, and
+                                algorithms. Actively participating in technical clubs and coding competitions.</p>
+                            <div class="timeline-badge current">Current</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <div class="timeline-info">
+                            <div class="timeline-date">2023</div>
+                            <h3>Full Stack Web Development Program</h3>
+                            <h4>Nxtwave CCBP 4.0 Academy</h4>
+                            <p>Completed an intensive program focusing on modern web development technologies and
+                                practices including React, Node.js, and database management.</p>
+                            <div class="timeline-badge">Certification</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <div class="timeline-info">
+                            <div class="timeline-date">2022 - 2023</div>
+                            <h3>Higher Secondary Education</h3>
+                            <h4>Velammal Vidyalaya</h4>
+                            <p>Completed higher secondary education with a focus on computer science and mathematics.
+                                Achieved 70% overall score.</p>
+                            <div class="timeline-badge">Completed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="section-subtitle">Where I've worked and what I've accomplished</div>
+            </div>
+            <div class="experience-container">
+
+                <div class="experience-card tilt-card">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <i data-lucide="smartphone"></i>
+                        </div>
+                        <div class="experience-info">
+                            <h3>App Developer Intern</h3>
+                            <h4>Dindigul District Administration</h4>
+                            <div class="experience-meta">
+                                <span class="experience-date"><i data-lucide="calendar"></i> 2026</span>
+                                <span class="experience-location"><i data-lucide="map-pin"></i> Dindigul</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li>Contributed to accessibility-focused election applications using <strong>Flutter, Python, and PostgreSQL</strong> for the 2026 Legislative Assembly Election.</li>
+                            <li>Developed features for <strong>Neyam</strong>, supporting transport, postal voting, and Braille assistance for differently-abled voters.</li>
+                            <li>Contributed to <strong>VoteAble</strong>, an administrative platform managing <strong>1,200+ voter assistance requests</strong> across multiple constituencies.</li>
+                            <li>Collaborated with the team on <strong>UI development, API integration, database handling, testing, and deployment</strong>.</li>
+                        </ul>
+                        <div class="experience-skills">
+                            <span class="skill-tag">Flutter</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">UI Development</span>
+                            <span class="skill-tag">API Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card tilt-card">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <i data-lucide="rocket"></i>
+                        </div>
+                        <div class="experience-info">
+                            <h3>Python Intern</h3>
+                            <h4>upSkill Campus · UniConverge Technologies</h4>
+                            <div class="experience-meta">
+                                <span class="experience-date"><i data-lucide="calendar"></i> 2024</span>
+                                <span class="experience-location"><i data-lucide="map-pin"></i> Remote</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <p>Gained hands-on experience in Python programming, focusing on backend development and
+                            automation tasks. Enhanced problem-solving abilities through coding challenges and
+                            real-world development scenarios.</p>
+                        <div class="experience-skills">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Backend Development</span>
+                            <span class="skill-tag">Automation</span>
+                            <span class="skill-tag">Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card tilt-card">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <div class="experience-info">
+                            <h3>Web Development Intern</h3>
+                            <h4>OctaNet Services Pvt. Ltd.</h4>
+                            <div class="experience-meta">
+                                <span class="experience-date"><i data-lucide="calendar"></i> 2024</span>
+                                <span class="experience-location"><i data-lucide="map-pin"></i> Remote</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <p>Built responsive and dynamic websites using HTML, CSS, and JavaScript during a one-month web
+                            development internship. Assisted in developing and maintaining web applications, improving
+                            user experience through front-end enhancements.</p>
+                        <div class="experience-skills">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-subtitle">Some of my recent work</div>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card tilt-card">
+                    <div class="browser-frame">
+                        <div class="browser-header">
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                        </div>
+                        <div class="browser-body">
+                            <div class="mockup-visual visual-buildclub">
+                                <span class="brackets-glow">&lt; PSNA /&gt;</span>
+                                <div class="compiling-bar">
+                                    <div class="compiling-fill"></div>
+                                </div>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="Build Club Live Site">
+                                        <i data-lucide="external-link"></i>
+                                    </a>
+                                    <a href="https://github.com/Sajan-Ilayaraja" target="_blank" class="project-link"
+                                        aria-label="Build Club Codebase">
+                                        <i data-lucide="github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Build Club Website (PSNA)</h3>
+                        <p>Developed and deployed the official Build Club website for my college using Cursor AI,
+                            ensuring a modern and responsive UI.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card tilt-card">
+                    <div class="browser-frame">
+                        <div class="browser-header">
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                        </div>
+                        <div class="browser-body">
+                            <div class="mockup-visual visual-mcp">
+                                <svg class="mcp-svg" viewBox="0 0 150 90">
+                                    <!-- Links -->
+                                    <path d="M 25 45 L 75 25" class="mcp-link-line" />
+                                    <path d="M 25 45 L 75 65" class="mcp-link-line" />
+                                    <path d="M 75 25 L 125 45" class="mcp-link-line" />
+                                    <path d="M 75 65 L 125 45" class="mcp-link-line" />
+
+                                    <!-- Packets -->
+                                    <circle r="3" class="data-packet">
+                                        <animateMotion dur="4s" repeatCount="indefinite"
+                                            path="M 25 45 L 75 25 L 125 45" />
+                                    </circle>
+                                    <circle r="3" class="data-packet" fill="#10b981">
+                                        <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite"
+                                            path="M 25 45 L 75 65 L 125 45" />
+                                    </circle>
+
+                                    <!-- Nodes -->
+                                    <circle cx="25" cy="45" r="8" class="mcp-node-circle" />
+                                    <circle cx="75" cy="25" r="8" class="mcp-node-circle" />
+                                    <circle cx="75" cy="65" r="8" class="mcp-node-circle" />
+                                    <circle cx="125" cy="45" r="8" class="mcp-node-circle" />
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="MCP Live Site">
+                                        <i data-lucide="external-link"></i>
+                                    </a>
+                                    <a href="https://github.com/Sajan-Ilayaraja" target="_blank" class="project-link"
+                                        aria-label="MCP Codebase">
+                                        <i data-lucide="github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>MCP Integration Project</h3>
+                        <p>Built a multi-service automation system integrating MCP servers with Pipedream workflows for
+                            various API integrations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Cursor AI</span>
+                            <span class="tech-tag">MCP</span>
+                            <span class="tech-tag">Pipedream</span>
+                            <span class="tech-tag">APIs</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card tilt-card">
+                    <div class="browser-frame">
+                        <div class="browser-header">
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                        </div>
+                        <div class="browser-body">
+                            <div class="mockup-visual visual-ticket">
+                                <div class="seat-grid">
+                                    <span class="grid-seat active"></span>
+                                    <span class="grid-seat"></span>
+                                    <span class="grid-seat active"></span>
+                                    <span class="grid-seat"></span>
+                                    <span class="grid-seat"></span>
+                                    <span class="grid-seat active"></span>
+                                    <span class="grid-seat"></span>
+                                    <span class="grid-seat active"></span>
+                                </div>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="Ticket Booking Live Site">
+                                        <i data-lucide="external-link"></i>
+                                    </a>
+                                    <a href="https://github.com/Sajan-Ilayaraja" target="_blank" class="project-link"
+                                        aria-label="Ticket Booking Codebase">
+                                        <i data-lucide="github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>CrowdTicket - Movie Booking System</h3>
+                        <p>Developed a fully functional movie ticket booking system with MongoDB integration for
+                            seamless data management.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card tilt-card">
+                    <div class="browser-frame">
+                        <div class="browser-header">
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                        </div>
+                        <div class="browser-body">
+                            <div class="mockup-visual visual-voteable">
+                                <svg class="voteable-svg" viewBox="0 0 150 90" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="52" y="5" width="46" height="80" rx="6" stroke="rgba(255, 255, 255, 0.15)"
+                                        stroke-width="1.5" />
+                                    <rect x="55" y="8" width="40" height="74" rx="4" fill="#0c101a" />
+                                    <rect x="59" y="14" width="22" height="10" rx="3" fill="rgba(99, 102, 241, 0.2)" />
+                                    <rect x="62" y="18" width="16" height="2" rx="1" fill="var(--primary-light)"
+                                        opacity="0.8" />
+                                    <rect x="71" y="28" width="20" height="10" rx="3" fill="rgba(16, 185, 129, 0.2)" />
+                                    <rect x="74" y="32" width="14" height="2" rx="1" fill="var(--secondary)"
+                                        opacity="0.8" />
+                                    <rect x="59" y="42" width="26" height="10" rx="3" fill="rgba(99, 102, 241, 0.2)" />
+                                    <rect x="62" y="46" width="20" height="2" rx="1" fill="var(--primary-light)"
+                                        opacity="0.8" />
+                                    <rect x="63" y="60" width="8" height="8" rx="2" fill="none"
+                                        stroke="var(--secondary)" stroke-width="1.2" />
+                                    <path d="M 65 64 L 67 66 L 70 61" stroke="var(--secondary)" stroke-width="1.2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <rect x="74" y="63" width="14" height="2" rx="1" fill="var(--text-muted)" />
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="VoteAble Live Site">
+                                        <i data-lucide="external-link"></i>
+                                    </a>
+                                    <a href="https://github.com/Sajan-Ilayaraja" target="_blank" class="project-link"
+                                        aria-label="VoteAble Codebase">
+                                        <i data-lucide="github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>VoteAble & Neyam</h3>
+                        <p>Developed accessibility-focused election applications for the 2026 Legislative Assembly
+                            Election, Dindigul District Administration. Built Neyam, a chatbot app for differently-abled
+                            voters to request transport, postal voting, and Braille assistance. Built VoteAble admin
+                            platform to manage 12000+ requests.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card tilt-card">
+                    <div class="browser-frame">
+                        <div class="browser-header">
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                        </div>
+                        <div class="browser-body">
+                            <div class="mockup-visual visual-mycampusos">
+                                <svg class="mycampusos-svg" viewBox="0 0 150 90" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="10" y="10" width="25" height="70" rx="3" fill="rgba(255, 255, 255, 0.03)"
+                                        stroke="rgba(255, 255, 255, 0.08)" />
+                                    <circle cx="22" cy="20" r="4" fill="var(--primary)" opacity="0.8" />
+                                    <rect x="15" y="32" width="15" height="2" rx="1" fill="var(--text-muted)" />
+                                    <rect x="15" y="42" width="15" height="2" rx="1" fill="var(--text-muted)" />
+                                    <rect x="15" y="52" width="15" height="2" rx="1" fill="var(--text-muted)" />
+                                    <rect x="42" y="10" width="98" height="70" rx="3" fill="rgba(255, 255, 255, 0.01)"
+                                        stroke="rgba(255, 255, 255, 0.08)" />
+                                    <rect x="48" y="16" width="40" height="24" rx="2" fill="rgba(99, 102, 241, 0.05)"
+                                        stroke="rgba(99, 102, 241, 0.15)" />
+                                    <rect x="54" y="30" width="4" height="6" rx="0.5" fill="var(--primary)" />
+                                    <rect x="61" y="24" width="4" height="12" rx="0.5" fill="var(--primary)"
+                                        opacity="0.7" />
+                                    <rect x="68" y="27" width="4" height="9" rx="0.5" fill="var(--primary)" />
+                                    <rect x="75" y="20" width="4" height="16" rx="0.5" fill="var(--primary-light)" />
+                                    <rect x="94" y="16" width="40" height="24" rx="2" fill="rgba(16, 185, 129, 0.05)"
+                                        stroke="rgba(16, 185, 129, 0.15)" />
+                                    <circle cx="114" cy="28" r="7" stroke="rgba(255, 255, 255, 0.08)"
+                                        stroke-width="1.8" />
+                                    <circle cx="114" cy="28" r="7" stroke="var(--secondary)" stroke-width="1.8"
+                                        stroke-dasharray="44" stroke-dashoffset="12" />
+                                    <rect x="48" y="46" width="86" height="28" rx="2" fill="rgba(255, 255, 255, 0.02)"
+                                        stroke="rgba(255, 255, 255, 0.06)" />
+                                    <rect x="54" y="52" width="5" height="5" rx="1" fill="none"
+                                        stroke="var(--primary-light)" stroke-width="0.8" />
+                                    <path d="M 55 54 L 56 55 L 58 52" stroke="var(--primary-light)"
+                                        stroke-width="0.8" />
+                                    <rect x="64" y="53" width="30" height="2" rx="0.5" fill="var(--text-light)"
+                                        opacity="0.9" />
+                                    <rect x="54" y="62" width="5" height="5" rx="1" fill="none"
+                                        stroke="var(--text-muted)" stroke-width="0.8" />
+                                    <rect x="64" y="63" width="22" height="2" rx="0.5" fill="var(--text-muted)" />
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="MyCampusOS Live Site">
+                                        <i data-lucide="external-link"></i>
+                                    </a>
+                                    <a href="https://github.com/Sajan-Ilayaraja" target="_blank" class="project-link"
+                                        aria-label="MyCampusOS Codebase">
+                                        <i data-lucide="github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>MyCampusOS</h3>
+                        <p>Designed and developed a MERN application with custom dashboard widgets: task lists, note
+                            vaults, user authentication, and system stats. Integrated secure REST APIs, JWT, Google
+                            OAuth, and optimized DB queries.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certifications</h2>
+                <div class="section-subtitle">My professional certifications and achievements</div>
+            </div>
+            <div class="certifications-container">
+                <div class="certification-card tilt-card">
+                    <div class="certification-header">
+                        <div class="certification-badge">
+                            <svg viewBox="0 0 24 24" class="salesforce-logo-svg" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.006 5.415a4.195 4.195 0 013.045-1.306c1.56 0 2.954.9 3.69 2.205.63-.3 1.35-.45 2.1-.45 2.85 0 5.159 2.34 5.159 5.22s-2.31 5.22-5.176 5.22c-.345 0-.69-.044-1.02-.104a3.75 3.75 0 01-3.3 1.95c-.6 0-1.155-.15-1.65-.375-.51.375-1.14.6-1.83.6-1.665 0-3.015-1.335-3.015-2.985 0-.255.03-.51.09-.75a4.293 4.293 0 01-3.615-4.245c0-1.905 1.245-3.51 2.955-4.08-.06-.24-.09-.495-.09-.765 0-1.62 1.32-2.94 2.94-2.94.3 0 .585.045.855.135z" />
+                            </svg>
+                        </div>
+                        <div class="certification-info">
+                            <h3>Salesforce Certified Agentforce Specialist</h3>
+                            <h4>Salesforce</h4>
+                            <div class="certification-meta">
+                                <span class="certification-date"><i data-lucide="calendar"></i> Issued October
+                                    2023</span>
+                                <span class="certification-id"><i data-lucide="ticket"></i> Credential ID:
+                                    6854736</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certification-content">
+                        <p>Certified by Salesforce for expertise in CRM workflows, automation, and case management using
+                            the Agentforce platform to enhance customer service efficiency.</p>
+                        <div class="certification-skills">
+                            <span class="skill-tag">CRM</span>
+                            <span class="skill-tag">Workflow Automation</span>
+                            <span class="skill-tag">Case Management</span>
+                            <span class="skill-tag">Agentforce Platform</span>
+                        </div>
+                    </div>
+                    <div class="certification-footer">
+                        <a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank"
+                            rel="noopener noreferrer" class="btn btn-outline">
+                            <i data-lucide="external-link"></i>
+                            View Credential
+                        </a>
+                        <a href="https://www.linkedin.com/posts/ramjeevasajani_trailblazercommunity-salesforce-agentforce-ugcPost-7385653619443863552-Sc9T/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEdA_zcBwCfTnHG7GEYsfudNrX8eIPp-uzE"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-linkedin-post">
+                            <svg viewBox="0 0 24 24" class="linkedin-btn-icon" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                            LinkedIn Post
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card tilt-card">
+                    <div class="certification-header">
+                        <div class="certification-badge">
+                            <i data-lucide="code"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3>Mission DSA: 160 Days of Mastery</h3>
+                            <h4>GeeksforGeeks</h4>
+                            <div class="certification-meta">
+                                <span class="certification-date"><i data-lucide="calendar"></i> Completed 2024</span>
+                                <span class="certification-id"><i data-lucide="ticket"></i> 160-Day Challenge</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certification-content">
+                        <p>Completed GeeksforGeeks' 160-day DSA challenge, covering Arrays, Strings, Linked Lists,
+                            Trees, Graphs, DP, and Greedy algorithms. Strengthened consistency, problem-solving, and
+                            algorithmic thinking.</p>
+                        <div class="certification-skills">
+                            <span class="skill-tag">Data Structures</span>
+                            <span class="skill-tag">Algorithms</span>
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Competitive Programming</span>
+                        </div>
+                    </div>
+                    <div class="certification-footer">
+                        <a href="https://media.geeksforgeeks.org/courses/certificates/a8457a4d3307d0e57643a0251b2d0ddf.pdf"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <i data-lucide="external-link"></i>
+                            View Certificate
+                        </a>
+                        <a href="https://www.linkedin.com/posts/ramjeevasajani_dsa-gfg160-160daysofcode-share-7336658060850933761-lidf/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEdA_zcBwCfTnHG7GEYsfudNrX8eIPp-uzE"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-linkedin-post">
+                            <svg viewBox="0 0 24 24" class="linkedin-btn-icon" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                            LinkedIn Post
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card tilt-card">
+                    <div class="certification-header">
+                        <div class="certification-badge">
+                            <i data-lucide="lightbulb"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3>IDE Bootcamp</h3>
+                            <h4>AICTE – Wadhwani Foundation</h4>
+                            <div class="certification-meta">
+                                <span class="certification-date"><i data-lucide="calendar"></i> Completed 2023</span>
+                                <span class="certification-id"><i data-lucide="ticket"></i> 5-Day Intensive</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certification-content">
+                        <p>5-day intensive training on innovation, entrepreneurship, intellectual property, funding, and
+                            product development. Gained practical insights into startup building and pitching.</p>
+                        <div class="certification-skills">
+                            <span class="skill-tag">Entrepreneurship</span>
+                            <span class="skill-tag">Innovation</span>
+                            <span class="skill-tag">Product Development</span>
+                            <span class="skill-tag">Startup Pitching</span>
+                        </div>
+                    </div>
+                    <div class="certification-footer">
+                        <a href="#" class="btn btn-outline">
+                            <i data-lucide="external-link"></i>
+                            View Certificate
+                        </a>
+                        <a href="https://linkedin.com/in/ramjeevasajani" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline btn-linkedin-post">
+                            <svg viewBox="0 0 24 24" class="linkedin-btn-icon" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                            LinkedIn Post
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Achievements</h2>
+                <div class="section-subtitle">My notable accomplishments and recognitions</div>
+            </div>
+
+            <div class="achievements-grid">
+                <!-- Achievement 1 -->
+                <div class="achievement-card tilt-card">
+                    <div class="achievement-image">
+                        <div class="image-placeholder">
+                            <i data-lucide="trophy"></i>
+                        </div>
+                        <div class="achievement-badge">2nd Prize</div>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Hack A Cure 2024 - 24hrs Hackathon</h3>
+                        <h4>VIT Chennai</h4>
+                        <div class="achievement-meta">
+                            <span class="achievement-date"><i data-lucide="calendar"></i> 2024</span>
+                            <span class="achievement-category"><i data-lucide="tag"></i> Healthcare Technology</span>
+                        </div>
+                        <p class="achievement-description">
+                            Secured <strong>2nd Prize</strong> in a 24-hour hackathon organized by VIT Chennai,
+                            competing against 50+ teams from across India.
+                        </p>
+                        <div class="project-details">
+                            <h5>Medical RAG Bot Project</h5>
+                            <p>Developed an intelligent Medical Retrieval-Augmented Generation bot that provides
+                                accurate medical information using AI and NLP technologies.</p>
+                        </div>
+                        <div class="achievement-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">FastAPI</span>
+                        </div>
+                        <div class="achievement-footer">
+                            <a href="https://www.linkedin.com/posts/ramjeevasajani_hackacure-vitchennai-hackathon-activity-7391493220721102848-Bs1g?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEdA_zcBwCfTnHG7GEYsfudNrX8eIPp-uzE"
+                                target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-linkedin-post">
+                                <svg viewBox="0 0 24 24" class="linkedin-btn-icon" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                                LinkedIn Post
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 2 -->
+                <div class="achievement-card tilt-card">
+                    <div class="achievement-image">
+                        <div class="image-placeholder">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <div class="achievement-badge">2nd Rank</div>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>DSA CodeVerse Contest 8</h3>
+                        <h4>NxtWave CCBP 4.0</h4>
+                        <div class="achievement-meta">
+                            <span class="achievement-date"><i data-lucide="calendar"></i> March 2025</span>
+                            <span class="achievement-category"><i data-lucide="tag"></i> National Level</span>
+                        </div>
+                        <p class="achievement-description">
+                            Secured <strong>2nd Rank</strong> in a national-level Data Structures and Algorithms contest
+                            organized by NxtWave CCBP 4.0.
+                        </p>
+                        <div class="project-details">
+                            <h5>Competitive Programming</h5>
+                            <p>Demonstrated exceptional problem-solving skills and algorithmic thinking in a competitive
+                                programming environment.</p>
+                        </div>
+                        <div class="achievement-tech">
+                            <span class="tech-tag">DSA</span>
+                            <span class="tech-tag">Algorithms</span>
+                            <span class="tech-tag">Problem Solving</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="achievement-footer">
+                            <a href="https://www.linkedin.com/posts/ramjeevasajani_dsa-codeverse-nxtwave-ugcPost-7323430573538988032-QIrT/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEdA_zcBwCfTnHG7GEYsfudNrX8eIPp-uzE"
+                                target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-linkedin-post">
+                                <svg viewBox="0 0 24 24" class="linkedin-btn-icon" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                                LinkedIn Post
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Extracurricular Section -->
+    <section id="extracurricular" class="extracurricular">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Extracurricular</h2>
+                <div class="section-subtitle">Leadership and community involvement</div>
+            </div>
+            <div class="extracurricular-container">
+                <!-- Activity 1 -->
+                <div class="extracurricular-card tilt-card">
+                    <div class="extracurricular-header">
+                        <div class="extracurricular-icon-wrapper">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div class="extracurricular-info">
+                            <h3>Core Member – Build Club</h3>
+                            <h4>IIT Madras Research Park</h4>
+                            <div class="extracurricular-meta">
+                                <span class="extracurricular-date"><i data-lucide="calendar"></i> 2023 – Present</span>
+                                <span class="extracurricular-location"><i data-lucide="map-pin"></i> Dindigul, Tamil
+                                    Nadu</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extracurricular-content">
+                        <ul>
+                            <li>Joined as a General Member in 2nd year and promoted to Core Member in 3rd year.</li>
+                            <li>Organized 10+ technical events, workshops, and hackathons for 300+ students.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="extracurricular-card tilt-card">
+                    <div class="extracurricular-header">
+                        <div class="extracurricular-icon-wrapper">
+                            <svg viewBox="0 0 24 24" class="salesforce-logo-svg" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.006 5.415a4.195 4.195 0 013.045-1.306c1.56 0 2.954.9 3.69 2.205.63-.3 1.35-.45 2.1-.45 2.85 0 5.159 2.34 5.159 5.22s-2.31 5.22-5.176 5.22c-.345 0-.69-.044-1.02-.104a3.75 3.75 0 01-3.3 1.95c-.6 0-1.155-.15-1.65-.375-.51.375-1.14.6-1.83.6-1.665 0-3.015-1.335-3.015-2.985 0-.255.03-.51.09-.75a4.293 4.293 0 01-3.615-4.245c0-1.905 1.245-3.51 2.955-4.08-.06-.24-.09-.495-.09-.765 0-1.62 1.32-2.94 2.94-2.94.3 0 .585.045.855.135z" />
+                            </svg>
+                        </div>
+                        <div class="extracurricular-info">
+                            <h3>Secretary – PSNA Agentblazers Club</h3>
+                            <h4>Salesforce Students Club</h4>
+                            <div class="extracurricular-meta">
+                                <span class="extracurricular-date"><i data-lucide="calendar"></i> 2025 – Present</span>
+                                <span class="extracurricular-location"><i data-lucide="map-pin"></i> Dindigul, Tamil
+                                    Nadu</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extracurricular-content">
+                        <ul>
+                            <li>Conducted technical competitions and community events focused on Salesforce technologies
+                                and innovation.</li>
+                            <li>Mentored students in a two-day bootcamp on building automation systems using Salesforce
+                                tools.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-subtitle">Let's work together</div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+91 9994580004</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>ramjeevasajani@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Madurai, India</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/ramjeevasajani" target="_blank" class="social-link"
+                            aria-label="LinkedIn Profile">
+                            <svg viewBox="0 0 24 24" class="contact-linkedin-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px; border-radius: 4px;">
+                                <rect width="24" height="24" rx="5" fill="#0077b5" />
+                                <path d="M7 19H4v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill="white" />
+                            </svg>
+                        </a>
+                        <a href="https://github.com/Sajan-Ilayaraja" target="_blank" class="social-link"
+                            aria-label="GitHub Profile">
+                            <svg viewBox="0 0 24 24" class="contact-github-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px; border-radius: 4px;">
+                                <rect width="24" height="24" rx="5" fill="black" />
+                                <circle cx="12" cy="12" r="7.5" fill="white" />
+                                <path d="M12 5c-3.86 0-7 3.14-7 7 0 3.09 2 5.7 4.78 6.63.35.06.48-.15.48-.34v-1.19c-1.95.42-2.36-.94-2.36-.94-.32-.81-.78-1.02-.78-1.02-.64-.44.05-.43.05-.43.71.05 1.08.73 1.08.73.63 1.08 1.65.77 2.05.59.06-.46.25-.77.45-.95-1.56-.18-3.19-.78-3.19-3.47 0-.76.27-1.39.72-1.88-.07-.18-.31-.89.07-1.86 0 0 .59-.19 1.93.72a6.7 6.7 0 0 1 3.5 0c1.34-.91 1.93-.72 1.93-.72.38.97.14 1.68.07 1.86.45.49.72 1.12.72 1.88 0 2.7-1.63 3.29-3.19 3.46.25.22.48.65.48 1.31v1.94c0 .19.13.41.49.34C19 17.7 21 15.09 21 12c0-3.86-3.14-7-7-7z" fill="black" />
+                            </svg>
+                        </a>
+                        <a href="https://leetcode.com/sajan220705" target="_blank" class="social-link"
+                            aria-label="LeetCode Profile">
+                            <i data-lucide="code-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" class="form-control" placeholder="Your Message" rows="5"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary magnetic">
+                            <i data-lucide="send"></i>
+                            <span class="btn-text">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Resume Download Button in Contact Section -->
+            <div class="contact-actions">
+                <a href="Ram Jeeva Sajan I Resume.pdf" download class="btn btn-primary magnetic">
+                    <i data-lucide="download"></i>
+                    <span class="btn-text"> Download Resume (PDF)</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2026 Ram Jeeva Sajan. All Rights Reserved.</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/Sajan-Ilayaraja" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; border-radius: 3px;">
+                            <rect width="24" height="24" rx="5" fill="black" />
+                            <circle cx="12" cy="12" r="7.5" fill="white" />
+                            <path d="M12 5c-3.86 0-7 3.14-7 7 0 3.09 2 5.7 4.78 6.63.35.06.48-.15.48-.34v-1.19c-1.95.42-2.36-.94-2.36-.94-.32-.81-.78-1.02-.78-1.02-.64-.44.05-.43.05-.43.71.05 1.08.73 1.08.73.63 1.08 1.65.77 2.05.59.06-.46.25-.77.45-.95-1.56-.18-3.19-.78-3.19-3.47 0-.76.27-1.39.72-1.88-.07-.18-.31-.89.07-1.86 0 0 .59-.19 1.93.72a6.7 6.7 0 0 1 3.5 0c1.34-.91 1.93-.72 1.93-.72.38.97.14 1.68.07 1.86.45.49.72 1.12.72 1.88 0 2.7-1.63 3.29-3.19 3.46.25.22.48.65.48 1.31v1.94c0 .19.13.41.49.34C19 17.7 21 15.09 21 12c0-3.86-3.14-7-7-7z" fill="black" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/ramjeevasajani" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; border-radius: 3px;">
+                            <rect width="24" height="24" rx="5" fill="#0077b5" />
+                            <path d="M7 19H4v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill="white" />
+                        </svg>
+                    </a>
+                    <a href="https://leetcode.com/sajan220705" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-link" aria-label="LeetCode">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; border-radius: 3px;">
+                            <rect width="24" height="24" rx="5" fill="#f89f1b" />
+                            <path d="M16.102 17.93l-2.69 2.607c-.466.451-1.211.451-1.677 0l-4.51-4.367a1.151 1.151 0 0 1 0-1.625l4.51-4.368c.466-.451 1.211-.451 1.677 0l2.69 2.607c.466.452.466 1.18 0 1.631L13.56 16.03c-.22.215-.22.562 0 .777l2.543 2.457zM8.67 12.013c0-1.237 1.013-2.24 2.263-2.24h4.526c.312 0 .565-.245.565-.547V8.547c0-.302-.253-.547-.565-.547h-4.526C8.5 8 6.5 9.98 6.5 12.413v4.56c0 .302.253.547.565.547h2.261a.552.552 0 0 0 .565-.547v-4.96z" fill="white" transform="scale(0.85) translate(2, 2)" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#education">Education</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#certifications">Certifications</a>
+                    <a href="#achievements">Achievements</a>
+                    <a href="#extracurricular">Extracurricular</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
